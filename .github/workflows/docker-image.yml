@@ -22,4 +22,6 @@ jobs:
     - name: test1
       run: pwd
     - name: test2
+      run: cd /sections
+    - name: test3
       run: ls
