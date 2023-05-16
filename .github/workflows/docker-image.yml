@@ -22,6 +22,6 @@ jobs:
     - name: test1
       run: ls
     - name: test2
-      run: cd /sections
+      run: cd sections
     - name: test3
       run: ls
