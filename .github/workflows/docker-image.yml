@@ -20,7 +20,7 @@ jobs:
     - name: Run the Docker image
       run: docker run test
     - name: test1
-      run: pwd
+      run: ls
     - name: test2
       run: cd /sections
     - name: test3
