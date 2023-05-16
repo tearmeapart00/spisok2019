@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "build" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "build" ]
 
 jobs:
 
@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build .
+      run: docker build -t test .
+    - name: Run the Docker image
+      run: docker run test
