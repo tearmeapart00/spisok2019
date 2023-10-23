@@ -9,6 +9,7 @@ def gen_whole(sections)
       f.puts <<~SPP
         pushd #{s.folder}
         sed $'s/\r$//' ./_section-compile.sh > ./_section-compile.Unix.sh
+        chmod u=rwx,g=rwx,o=rwx _section-compile.Unix.sh
         ./_section-compile.Unix.sh --clang-completer
         popd
         SPP
