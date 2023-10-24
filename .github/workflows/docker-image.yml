@@ -18,8 +18,14 @@ jobs:
       run: docker build -t test .
     - uses: actions/checkout@v3
     - name: Run the Docker image
-      run: docker run test
-    - name: test1
-      run: pwd
-    - name: test2
-      run: ls
+      run: |
+        docker run test
+        CONTAINER_ID=$(docker ps -alq)
+        sudo docker cp $CONTAINER_ID:/spisok.pdf ../output
+        cd /output
+        ls
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage-report
+        path: /output/spisok.pdf
