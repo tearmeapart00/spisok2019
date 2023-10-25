@@ -22,9 +22,7 @@ jobs:
         docker run test
         CONTAINER_ID=$(docker ps -alq)
         ls
-        sudo docker cp $CONTAINER_ID:/spisok.pdf .
-        ls
-        mv spisok.pdf /output
+        sudo docker cp $CONTAINER_ID:/spisok.pdf ./output
         ls
         cd /output
         ls
