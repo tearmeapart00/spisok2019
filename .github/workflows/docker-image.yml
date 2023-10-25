@@ -22,7 +22,8 @@ jobs:
         docker run test
         CONTAINER_ID=$(docker ps -alq)
         ls
-        sudo docker cp $CONTAINER_ID:/spisok.pdf ..
+        sudo docker cp $CONTAINER_ID:/spisok.pdf .
+        ls
         cd ..
         ls
     - name: Archive code coverage results
