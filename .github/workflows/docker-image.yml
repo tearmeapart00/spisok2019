@@ -22,12 +22,13 @@ jobs:
         docker run test
         CONTAINER_ID=$(docker ps -alq)
         ls
-        sudo docker cp $CONTAINER_ID:/spisok.pdf ./output
+        sudo docker cp $CONTAINER_ID:/spisok.pdf .
         ls
-        cd /output
-        ls
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v3
+    - uses: actions/checkout@v3
+    - name: artup
+    - run: mkdir -p .
+    - run: echo hello > ./spisok.pdf
+    - uses: actions/upload-artifact@v3
       with:
-        name: code-coverage-report
-        path: /output
+        name: my-artifact
+        path: ./spisok.pdf
