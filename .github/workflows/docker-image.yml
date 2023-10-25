@@ -25,7 +25,6 @@ jobs:
         sudo docker cp $CONTAINER_ID:/spisok.pdf .
         ls
     - uses: actions/checkout@v3
-    - name: artup
     - run: mkdir -p .
     - run: echo hello > ./spisok.pdf
     - uses: actions/upload-artifact@v3
