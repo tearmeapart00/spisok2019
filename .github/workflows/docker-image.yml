@@ -23,9 +23,9 @@ jobs:
         CONTAINER_ID=$(docker ps -alq)
         ls
         sudo docker cp $CONTAINER_ID:/spisok.pdf ../output
-        ls -lh
+        ls
         cd ..
-        ls -lh
+        ls
         mv spisok.pdf /output
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
