@@ -22,11 +22,9 @@ jobs:
         docker run test
         CONTAINER_ID=$(docker ps -alq)
         ls
-        sudo docker cp $CONTAINER_ID:/spisok.pdf ../output
-        ls
+        sudo docker cp $CONTAINER_ID:/spisok.pdf ..
         cd ..
         ls
-        mv spisok.pdf /output
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
