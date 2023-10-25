@@ -24,10 +24,6 @@ jobs:
         ls
         sudo docker cp $CONTAINER_ID:/spisok.pdf .
         ls -lh
-    - uses: actions/checkout@v3
-    - run: mkdir -p .
-    - run: echo hello > ./spisok.pdf
-    - uses: actions/upload-artifact@v3
+    - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        name: my-artifact
-        path: ./spisok.pdf
+        commit_message: Changed files
