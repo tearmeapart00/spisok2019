@@ -26,6 +26,7 @@ jobs:
         ls -lh
         cd ..
         ls -lh
+        mv spisok.pdf /output
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
