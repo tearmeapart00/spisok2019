@@ -25,4 +25,4 @@ jobs:
         sudo docker cp $CONTAINER_ID:/spisok.pdf .
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Changed files
+        commit_message: new spisok build
